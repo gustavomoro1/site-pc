@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogos Digitais - Página Inicial</title>
+    <style>
+        /* Resetando alguns estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #111;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style-type: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Seções */
+        section {
+            padding: 2rem;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo do formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 10px;
+        }
+
+        form input, form textarea {
+            padding: 0.5rem;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #111;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        form button:hover {
+            background-color: #444;
+        }
+
+        /* Mensagens de Sucesso e Erro */
+        .hidden {
+            display: none;
+        }
+
+        #mensagemSucesso {
+            color: green;
+        }
+
+        #mensagemErro {
+            color: red;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #111;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção Home -->
+        <section id="home">
+            <h1>Bem-vindo ao Mundo dos Jogos Digitais</h1>
+            <p>Explore, jogue e descubra novos mundos!</p>
+        </section>
+
+        <!-- Seção Sobre -->
+        <section id="sobre">
+            <h2>Sobre o site</h2>
+            <p>Este site é dedicado a todos os apaixonados por jogos digitais. Aqui, você pode encontrar dicas, notícias e novidades sobre os jogos mais populares da atualidade.</p>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato">
+            <h2>Contato</h2>
+            <form id="formContato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+
+                <button type="submit">Enviar</button>
+                <p id="mensagemSucesso" class="hidden">Obrigado pelo seu contato!</p>
+                <p id="mensagemErro" class="hidden">Por favor, preencha todos os campos corretamente.</p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jogos Digitais | Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        document.getElementById("formContato").addEventListener("submit", function(event) {
+            event.preventDefault(); // Previne o envio padrão do formulário
+
+            // Obtendo os valores dos campos
+            let nome = document.getElementById("nome").value;
+            let email = document.getElementById("email").value;
+            let mensagem = document.getElementById("mensagem").value;
+
+            // Validando os campos
+            if (nome && email && mensagem && validateEmail(email)) {
+                document.getElementById("mensagemSucesso").classList.remove("hidden");
+                document.getElementById("mensagemErro").classList.add("hidden");
+                
+                // Limpar campos após o envio
+                document.getElementById("nome").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("mensagem").value = "";
+            } else {
+                document.getElementById("mensagemErro").classList.remove("hidden");
+                document.getElementById("mensagemSucesso").classList.add("hidden");
+            }
+        });
+
+        // Função para validar o formato de e-mail
+        function validateEmail(email) {
+            let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return regex.test(email);
+        }
+    </script>
+</body>
+</html>
