@@ -268,3 +268,34 @@
 
     <footer>
         <p> 2025 Jogos Digitais - Trabalho CPMPR
+
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("ynK8yS5fZ0K7PxyyEQoI8"); // Substitua "YOUR_USER_ID" pelo seu ID de usuário do EmailJS
+    })();
+
+    document.getElementById('formContato').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var nome = document.getElementById('nome').value;
+        var email = document.getElementById('email').value;
+        var mensagem = document.getElementById('mensagem').value;
+
+        var templateParams = {
+            from_name: nome,
+            from_email: email,
+            message: mensagem
+        };
+
+        emailjs.send('service_drytey4', 'template_auu710t', templateParams) // Substitua com seu Service ID e Template ID
+            .then(function(response) {
+                document.getElementById('mensagemSucesso').classList.remove('hidden');
+                document.getElementById('mensagemErro').classList.add('hidden');
+                document.getElementById('formContato').reset();
+            }, function(error) {
+                document.getElementById('mensagemErro').classList.remove('hidden');
+                document.getElementById('mensagemSucesso').classList.add('hidden');
+            });
+    });
+</script>
