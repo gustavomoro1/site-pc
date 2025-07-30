@@ -178,9 +178,10 @@
         <section id="jogos">
             <h2>Principais Jogos Digitais</h2>
 
+            <!-- Jogo 1 -->
             <div class="jogo">
                 <h3>The Legend of Zelda: Tears of the Kingdom</h3>
-                <p>Explore o vasto mundo de Hyrule com Link em uma aventura épica. "Tears of the Kingdom" leva os jogadores a um novo nível de exploração e narrativa, onde o destino de Hyrule está em jogo. O jogo oferece novas mecânicas de jogabilidade, incluindo a habilidade de manipular o tempo e os objetos ao seu redor.</p>
+                <p>Explore o vasto mundo de Hyrule com Link em uma aventura épica...</p>
                 <div class="info">
                     <div>
                         <h4>Desenvolvedor:</h4>
@@ -195,12 +196,13 @@
                         <p>12 de maio de 2023</p>
                     </div>
                 </div>
-                <img src="https://www.nintendo.com/content/dam/noa/en_US/games/switch/t/the-legend-of-zelda-tears-of-the-kingdom/feature-hero.jpg" alt="The Legend of Zelda: Tears of the Kingdom">
+                <img src="https://www.nintendo.com/content/dam/noa/en_US/games/switch/t/the-legend-of-zelda-tears-of-the-kingdom/feature-hero.jpg" alt="The Legend of Zelda">
             </div>
 
+            <!-- Jogo 2 -->
             <div class="jogo">
                 <h3>Grand Theft Auto V</h3>
-                <p>Um dos maiores sucessos de todos os tempos, "GTA V" oferece uma experiência de mundo aberto com uma narrativa envolvente, missões emocionantes e um modo multiplayer que continua a atrair milhões de jogadores. Ambientado em Los Santos, o jogo mistura ação e comédia com profundidade e uma vasta gama de atividades.</p>
+                <p>Um dos maiores sucessos de todos os tempos, "GTA V" oferece uma experiência...</p>
                 <div class="info">
                     <div>
                         <h4>Desenvolvedor:</h4>
@@ -208,19 +210,20 @@
                     </div>
                     <div>
                         <h4>Plataforma:</h4>
-                        <p>PC, PS5, PS4, Xbox Series X/S, Xbox One</p>
+                        <p>PC, PS5, PS4, Xbox</p>
                     </div>
                     <div>
                         <h4>Lançamento:</h4>
                         <p>17 de setembro de 2013</p>
                     </div>
                 </div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Grand_Theft_Auto_V_logo.svg" alt="Grand Theft Auto V">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Grand_Theft_Auto_V_logo.svg" alt="GTA V">
             </div>
 
+            <!-- Jogo 3 -->
             <div class="jogo">
                 <h3>Fortnite</h3>
-                <p>Com uma fórmula de batalha real inovadora, "Fortnite" se tornou um fenômeno global. O jogo permite aos jogadores lutar em equipes ou individualmente, enquanto coletam recursos, constroem estruturas e enfrentam outros jogadores em um cenário dinâmico e sempre em mudança. Além disso, o jogo é constantemente atualizado com novos conteúdos e eventos especiais.</p>
+                <p>Com uma fórmula de batalha real inovadora, "Fortnite" se tornou um fenômeno global...</p>
                 <div class="info">
                     <div>
                         <h4>Desenvolvedor:</h4>
@@ -228,7 +231,7 @@
                     </div>
                     <div>
                         <h4>Plataforma:</h4>
-                        <p>PC, PS5, PS4, Xbox Series X/S, Xbox One, Nintendo Switch, Mobile</p>
+                        <p>PC, PS5, PS4, Xbox, Switch</p>
                     </div>
                     <div>
                         <h4>Lançamento:</h4>
@@ -238,68 +241,30 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Fortnite_Logo_2023.svg" alt="Fortnite">
             </div>
 
-            <div class="jogo">
-                <h3>Valorant</h3>
-                <p>Combinando elementos de jogos de tiro tático e personagens com habilidades únicas, "Valorant" se destaca no gênero de FPS competitivo. Criado pela Riot Games, o jogo exige habilidade e estratégia para conquistar a vitória. Com uma base de jogadores dedicada e torneios competitivos, "Valorant" tem se consolidado como um dos maiores sucessos nos jogos de tiro.</p>
-                <div class="info">
-                    <div>
-                        <h4>Desenvolvedor:</h4>
-                        <p>Riot Games</p>
-                    </div>
-                    <div>
-                        <h4>Plataforma:</h4>
-                        <p>PC, Xbox Series X/S</p>
-                    </div>
-                    <div>
-                        <h4>Lançamento:</h4>
-                        <p>2 de junho de 2020</p>
+        </section>
 
-                            <!-- Seção Contato -->
-                            <section id="contato">
-                                <h2>Contato</h2>
-                                <p>Tem alguma dúvida ou sugestão? Preencha o formulário abaixo para entrar em contato conosco!</p>
-                                
-                                <form action="submit_form.php" method="POST">
-                                    <label for="nome">Nome:</label>
-                                    <input type="text" id="nome" name="nome" required>
-                    
-                                    <label for="email">E-mail:</label>
-                                    <input type="email" id="email" name="email" required>
-                    
-                                    <label for="mensagem">Mensagem:</label>
-                                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-                    
-                                    <button type="submit">Enviar</button>
-                                </form>
-                    
-                                <div id="mensagemSucesso" class="hidden">Sua mensagem foi enviada com sucesso!</div>
-                                <div id="mensagemErro" class="hidden">Ocorreu um erro ao enviar sua mensagem. Tente novamente.</div>
-                            </section>
-                        </main>
-                    
-                        <footer>
-                            <p>2025 Jogos Digitais - Trabalho CPMPR</p>
-                        </footer>
-                    
-                        <script>
-                            // Lógica para mostrar as mensagens de sucesso/erro no formulário
-                            const form = document.querySelector('form');
-                            const mensagemSucesso = document.getElementById('mensagemSucesso');
-                            const mensagemErro = document.getElementById('mensagemErro');
-                    
-                            form.addEventListener('submit', (event) => {
-                                event.preventDefault(); // Impede o envio real do formulário
-                                // Simula o envio do formulário
-                                const sucesso = Math.random() > 0.5; // Simulação de sucesso ou erro
-                    
-                                if (sucesso) {
-                                    mensagemSucesso.classList.remove('hidden');
-                                    mensagemErro.classList.add('hidden');
-                                } else {
-                                    mensagemErro.classList.remove('hidden');
-                                    mensagemSucesso.classList.add('hidden');
-                                }
-                            });
-                        </script>
-                    </body>
-                    </html>
+        <!-- Seção Contato -->
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Tem alguma dúvida ou sugestão? Preencha o formulário abaixo para entrar em contato conosco!</p>
+            
+            <form id="formContato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+
+            <div id="mensagemSucesso" class="hidden">Sua mensagem foi enviada com sucesso!</div>
+            <div id="mensagemErro" class="hidden">Ocorreu um erro ao enviar sua mensagem. Tente novamente.</div>
+        </section>
+    </main>
+
+    <footer>
+        <p> 2025 Jogos Digitais - Trabalho CPMPR
