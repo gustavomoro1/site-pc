@@ -270,34 +270,31 @@
         <p> 2025 Jogos Digitais - Trabalho CPMPR</p>
     </footer>
 
-    <!-- Script do EmailJS corrigido -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("fBrtnY3GZUH4lVO0W"); // Substitua por sua Public Key do EmailJS
-        })();
+    <!-- Scripts EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("fBrtnY3GZUH4lVO0W");
+    })();
 
-        document.getElementById('formContato').addEventListener('submit', function(event) {
-            event.preventDefault();
+    document.getElementById("form").addEventListener("submit", function (event) {
+      event.preventDefault();
 
-            var templateParams = {
-                from_name: document.getElementById('nome').value,
-                from_email: document.getElementById('email').value,
-                message: document.getElementById('mensagem').value
-            };
-
-            emailjs.send('service_drytey4', 'template_auu710t', templateParams)
-                .then(function(response) {
-                    console.log('SUCESSO!', response.status, response.text);
-                    document.getElementById('mensagemSucesso').classList.remove('hidden');
-                    document.getElementById('mensagemErro').classList.add('hidden');
-                    document.getElementById('formContato').reset();
-                }, function(error) {
-                    console.error('ERRO:', error);
-                    document.getElementById('mensagemErro').classList.remove('hidden');
-                    document.getElementById('mensagemSucesso').classList.add('hidden');
-                });
-        });
-    </script>
+      emailjs.send("service_drytey4", "template_auu710t", {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        title: document.getElementById("title").value,
+        message: document.getElementById("message").value,
+        time: new Date().toLocaleString(),
+      })
+      .then(function (response) {
+        alert("Mensagem enviada com sucesso!");
+        document.getElementById("form").reset();
+      }, function (error) {
+        alert("Erro ao enviar. Tente novamente.");
+        console.error("Erro:", error);
+      });
+    });
+  </script>
 </body>
 </html>
